@@ -8,15 +8,15 @@
 <?php 
 /* handle post data */
 if(!empty($_POST)){
-$n = mysql_real_escape_string($_POST["names"]);
-$c = mysql_real_escape_string($_POST["contact"]);
+$n = mysqli_real_escape_string($db, $_POST["names"]);
+$c = mysqli_real_escape_string($db, $_POST["contact"]);
 
 $q = "insert into contacts (names, contact) values('".$n."','".$c."')";
 
 
-if(strlen($c) !== 10){
-echo2("Use the proper Contact Format ie#0726939482");
-}else{
+// if(strlen($c) !== 10){
+// echo2("Use the proper Contact Format ie#0726939482");
+// }else{
 
 
 if(!$db->query($q)){
@@ -25,7 +25,7 @@ if(!$db->query($q)){
 	echo "Contact Saved Successfully";
 }
 
-}
+// }
 
 
 }

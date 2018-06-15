@@ -11,7 +11,7 @@ function togla(source){a = document.getElementsByName('contact[]');for(var i=0, 
 	if(!empty($_POST)){
 		if(!empty($_POST["contact"])){
 			$recipients = implode(",",$_POST["contact"]);
-			$message = mysql_real_escape_string($_POST["message"]);
+			$message = mysqli_real_escape_string($db, $_POST["message"]);
 			require("africas.php");
 		}else{
 			echo2("please select at least one contact");

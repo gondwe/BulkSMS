@@ -21,7 +21,7 @@ define("root", "website/speed");
 define("server","localhost");
 
 /* database password */
-define("mypass","root");
+define("mypass","toor");
 
 /* database user */
 define("myuser","root");
